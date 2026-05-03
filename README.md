@@ -65,8 +65,8 @@ If no API key is set, the app falls back to **deterministic demo mode** that sti
 ## Getting started
 
 ```bash
-git clone https://github.com/MalikZeeshan1122/AI-Scientist.git
-cd AI-Scientist/app
+git clone https://github.com/MalikZeeshan1122/Data-Lab.git
+cd Data-Lab/app
 npm install
 # Optional: create .env.local in this folder with GROQ_API_KEY=your_key
 npm run dev
@@ -109,7 +109,7 @@ The Question panel includes four sample experiments — one click loads the data
 ## Project layout
 
 ```
-AI-Scientist/
+Data-Lab/
 ├── README.md                 # this file — full project documentation
 └── app/
     ├── package.json
