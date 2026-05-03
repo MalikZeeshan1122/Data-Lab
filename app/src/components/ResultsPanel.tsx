@@ -111,7 +111,7 @@ function EmptyState() {
       </div>
       <h4 className="text-base font-semibold">Awaiting your experiment</h4>
       <p className="mt-1 max-w-sm text-sm text-white/55">
-        Drop a CSV, ask a question, and the AI Scientist will form a hypothesis, run
+        Drop a CSV, ask a question, and Data Lab will form a hypothesis, run
         the math, and report findings — usually in under 5 seconds.
       </p>
       <div className="mt-4 grid w-full max-w-md grid-cols-5 gap-2">
@@ -411,7 +411,7 @@ function CopyButton({ text }: { text: string }) {
 
 function resultToMarkdown(r: AnalysisResult): string {
   const out: string[] = [];
-  out.push(`# AI Scientist report`);
+  out.push(`# Data Lab report`);
   out.push(``);
   out.push(`**Question:** ${r.question}`);
   if (r.domain) out.push(`**Domain:** ${r.domain}`);

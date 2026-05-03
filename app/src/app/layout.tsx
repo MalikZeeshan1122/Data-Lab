@@ -13,12 +13,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AI Scientist — From question to insight in seconds",
+  title: "Data Lab — From question to insight in seconds",
   description:
-    "An AI research partner that turns raw data and a question into hypotheses, charts, and conclusions in seconds. Built with Groq, Next.js, and the scientific method.",
-  applicationName: "AI Scientist",
+    "Data Lab turns raw data and a question into hypotheses, charts, and conclusions in seconds. Built with Groq, Next.js, and the scientific method.",
+  applicationName: "Data Lab",
   keywords: [
-    "AI Scientist",
+    "Data Lab",
     "data analysis",
     "Groq",
     "LLM",
@@ -26,9 +26,9 @@ export const metadata: Metadata = {
     "hypothesis",
     "Next.js",
   ],
-  authors: [{ name: "AI Scientist" }],
+  authors: [{ name: "Data Lab" }],
   openGraph: {
-    title: "AI Scientist",
+    title: "Data Lab",
     description:
       "From question to insight in seconds. Hypotheses, charts, conclusions — autonomously.",
     type: "website",

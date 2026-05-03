@@ -1,12 +1,12 @@
-# AI Scientist
+# Data Lab
 
-> Your research partner that goes from question to insight in seconds. Built for a 24-hour hackathon.
+> Your research partner that goes from question to insight in seconds. Built for a 24-hour hackathon. Canonical documentation: [repository root `README.md`](../README.md).
 
-Drop a CSV, ask a research question, and AI Scientist forms a hypothesis, runs a real analysis (deterministic statistics + Groq-powered reasoning), generates charts, and writes up a defensible report — like a senior data scientist on a coffee break.
+Drop a CSV, ask a research question, and Data Lab forms a hypothesis, runs a real analysis (deterministic statistics + Groq-powered reasoning), generates charts, and writes up a defensible report — like a senior data scientist on a coffee break.
 
 ## Project details
 
-**Purpose.** AI Scientist is a small research workbench for tabular data (and optional free-text notes). It turns a natural-language question plus a dataset into a structured “lab notebook” report: hypothesis, method, findings, visuals, conclusion, follow-up experiments, and explicit caveats—so you get something you can read, share, or paste into a doc—not just a vague chat reply.
+**Purpose.** Data Lab is a small research workbench for tabular data (and optional free-text notes). It turns a natural-language question plus a dataset into a structured “lab notebook” report: hypothesis, method, findings, visuals, conclusion, follow-up experiments, and explicit caveats—so you get something you can read, share, or paste into a doc—not just a vague chat reply.
 
 **What makes the numbers trustworthy.** Before any LLM runs, the server builds a **deterministic dataset summary**: column types (number, string, boolean, date), counts, missing values, uniques, and type-appropriate stats (for example means/medians/stddev for numeric columns, top values for categoricals, date ranges for dates). Those figures are computed in code and passed to the model as JSON. Charts in the UI are driven by **structured chart specs** (kind, axes, optional pre-aggregated `data`), so the presentation stays aligned with the analysis.
 

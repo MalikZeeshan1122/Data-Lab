@@ -36,7 +36,7 @@ export function Header({ apiKey, onApiKeyChange, model, onModelChange }: HeaderP
             <Atom className="h-4 w-4 text-white" strokeWidth={2.5} />
           </div>
           <div className="leading-none">
-            <div className="font-semibold tracking-tight text-white">AI Scientist</div>
+            <div className="font-semibold tracking-tight text-white">Data Lab</div>
             <div className="text-[10px] uppercase tracking-[0.18em] text-white/40">
               hypothesis · evidence · insight
             </div>

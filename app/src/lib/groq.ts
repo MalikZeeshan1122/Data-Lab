@@ -3,7 +3,7 @@ import type { AnalysisResult, DatasetSummary } from "./types";
 
 export const DEFAULT_MODEL = "llama-3.3-70b-versatile";
 
-const SYSTEM_PROMPT = `You are AI Scientist, an autonomous research partner.
+const SYSTEM_PROMPT = `You are Data Lab, an autonomous research partner.
 
 Given a user's question and (optionally) a tabular dataset summary, you must reason like a careful scientist and produce a rigorous, structured analysis.
 

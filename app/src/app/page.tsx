@@ -11,13 +11,34 @@ import { SAMPLE_DATASETS } from "@/lib/samples";
 import type { AnalysisResult, AnalyzeResponse, DatasetSummary } from "@/lib/types";
 import { useLocalStorage } from "@/lib/useLocalStorage";
 
-const STORAGE_API_KEY = "ai-scientist:groq-key";
-const STORAGE_MODEL = "ai-scientist:model";
+const LEGACY_STORAGE_API_KEY = "ai-scientist:groq-key";
+const LEGACY_STORAGE_MODEL = "ai-scientist:model";
+const STORAGE_API_KEY = "data-lab:groq-key";
+const STORAGE_MODEL = "data-lab:model";
 const DEFAULT_MODEL = "llama-3.3-70b-versatile";
 
 export default function Home() {
   const [apiKey, setApiKey] = useLocalStorage(STORAGE_API_KEY, "");
   const [model, setModel] = useLocalStorage(STORAGE_MODEL, DEFAULT_MODEL);
+
+  React.useEffect(() => {
+    try {
+      const curKey = window.localStorage.getItem(STORAGE_API_KEY);
+      const legKey = window.localStorage.getItem(LEGACY_STORAGE_API_KEY);
+      if (!curKey && legKey) {
+        setApiKey(legKey);
+        window.localStorage.removeItem(LEGACY_STORAGE_API_KEY);
+      }
+      const curModel = window.localStorage.getItem(STORAGE_MODEL);
+      const legModel = window.localStorage.getItem(LEGACY_STORAGE_MODEL);
+      if (!curModel && legModel) {
+        setModel(legModel);
+        window.localStorage.removeItem(LEGACY_STORAGE_MODEL);
+      }
+    } catch {
+      /* localStorage unavailable */
+    }
+  }, [setApiKey, setModel]);
 
   const [dataText, setDataText] = React.useState("");
   const [datasetName, setDatasetName] = React.useState<string | undefined>(undefined);
@@ -117,7 +138,7 @@ export default function Home() {
           <div className="bg-grid pointer-events-none absolute inset-0 -z-10" />
           <div className="flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-white/55">
             <Atom className="h-3.5 w-3.5 text-violet-300" />
-            AI Scientist · v1
+            Data Lab · v1
           </div>
           <h1 className="mt-3 max-w-3xl text-4xl font-semibold leading-[1.1] tracking-tight text-white sm:text-5xl md:text-6xl">
             Your research partner that goes from{" "}
@@ -125,7 +146,7 @@ export default function Home() {
             <span className="gradient-text">insight</span> in seconds.
           </h1>
           <p className="mt-4 max-w-2xl text-base leading-7 text-white/65 sm:text-lg">
-            Drop a dataset, ask a question. AI Scientist forms a hypothesis, runs
+            Drop a dataset, ask a question. Data Lab forms a hypothesis, runs
             the analysis, generates charts and writes up a defensible report — like
             a senior data scientist on a coffee break.
           </p>
@@ -201,7 +222,7 @@ export default function Home() {
         </section>
 
         <footer className="mt-16 flex flex-col items-center justify-between gap-2 border-t border-white/5 pt-6 text-xs text-white/40 sm:flex-row">
-          <span>AI Scientist · built for the 24-hour hackathon</span>
+          <span>Data Lab · built for the 24-hour hackathon</span>
           <span className="flex items-center gap-1.5">
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
             ready

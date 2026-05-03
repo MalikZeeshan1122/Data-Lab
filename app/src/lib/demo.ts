@@ -17,7 +17,7 @@ export function buildDemoAnalysis(opts: {
       question,
       domain: "general research",
       hypothesis:
-        "Without a dataset attached, the AI Scientist falls back to first-principles reasoning. The strongest hypothesis is usually the one that yields the cheapest, fastest experiment.",
+        "Without a dataset attached, Data Lab falls back to first-principles reasoning. The strongest hypothesis is usually the one that yields the cheapest, fastest experiment.",
       approach:
         "1) Restate the question in measurable terms. 2) List candidate variables and their plausible effects. 3) Identify the smallest experiment that would falsify the leading hypothesis.",
       keyFindings: [
